@@ -21,12 +21,22 @@
 `timescale 1ns / 100ps
 
 module mux(
-    //Todo: define inputs here
-    );
+    input a,
+    input b,
+    input sel, 
+
+    output out
     
-    //Todo: define registers and wires here
+    );
 
+reg out;
 
-    //Todo: define your logic here                 
-      
+    always @* begin
+
+        if (sel == 1)
+            #5 out = b;
+        else
+            #5 out = a;
+    end
+
 endmodule
